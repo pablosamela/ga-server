@@ -10,9 +10,9 @@ router.post('/subscription',  (req, res, next) => {
   var email = req.body.email;
   console.log("Email = " + email );
   if(email === 'a@a.com'){
-    res.status(408).send({ error: 'Something failed!' });
+    res.status(408).send({ code: '408', message: 'Something failed!' });
   } else {
-    res.end("yes");
+    res.send({ code: '200', message: 'You have been subscribed!' }).end('');
   }
  }); 
 
